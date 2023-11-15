@@ -5,7 +5,7 @@ const productsList = document.getElementById("products");
 //console.log(productsList);
 //console.log(categoryList)
 
-//Sepeti Açma Kapama İşlemi için lazm olan elemanlar
+//Sepeti Açma Kapama İşlemi İçin Gerekli Olan Elemanlar
 
 //açma butonu
 const openButton = document.querySelector("#open-button");
@@ -21,7 +21,7 @@ const modalList = document.querySelector(".modal-list");
 const totalPrice = document.getElementById("total-price");
 //console.log(totalPrice)
 
-//API ' ye kategi listesi için istek  attığımız ve uygulamada kategorileri bastırmak için fonksiyon
+//API ' ye kategori listesi için istek  attığımız ve uygulamada kategorileri bastırmak için fonksiyon
 function fetchCategories() {
   //console.log('Fonksiyon çalıştı')
 
@@ -38,33 +38,33 @@ function fetchCategories() {
   //apiye veri çekme isteği atma
   fetch("https://fakestoreapi.com/products")
     //Eğer apiden olumlu sonuc gelmiş ise then bloğu çalışır
-    //API den elen ilk cevabı json verisine çeviriyoruz
+    //API den gelen ilk cevabı json verisine çeviriyoruz
     .then((response) => response.json())
     //json çevirme işlemide bir süreç alır ve bunun içinde bir then bloğu daha kulllanılır
     .then((data) =>
-      //gelen data verisi çok fazla olduğu slice metodu ile diziyi böldük
-      //ve bölünmüş olan yeni diziye mapp metodu uygulayarak her bir eleman için işlem gerçkelştirik
+      //gelen data verisi çok fazla olduğu için slice metodu ile diziyi böldük
+      //ve bölünmüş olan yeni diziye map metodu uygulayarak her bir eleman için işlem gerçekleştirdik
       data.slice(0, 5).map((categoryy) => {
         //obje destructor
         //verileri kullanılacak objeden bir kere en başta çıkarıp
-        //daha sonra ilgili yerlede sadece keyi yazarak erişmek için yapılır
+        //daha sonra ilgili yerlere sadece keyi yazarak erişmek için yapılır
         const { category, image } = categoryy;
 
         //console.log(name);
         //console.log(image);
-        //map metodu diziiyi dönerken döndğüğü her bir elemean için bir div oluştuyor
+        //map metodu diziyi dönerken döndüğü her bir eleman için bir div oluşturuyor
 
         const categoryDiv = document.createElement("div");
-        //oluşturaln bu dive istenilen class ekkleniyor
+        //oluşturulan bu dive istenilen class ekleniyor
         categoryDiv.classList.add("category");
-        //oluşturlmuş olan divin içeriği innerhtml ile düenleniyor
+        //oluşturulmuş olan divin içeriği innerhtml ile düzenleniyor
         categoryDiv.innerHTML = `    <img
     src=${image}    alt=""
   />
   <span>${category}</span>`;
 
         // console.log(categoryDiv);
-        //daha sonra js tarafında oluştrualn bu elemanın html tarafında da gözükmesi için appendChild metodu ile html gödneriliyor
+        //daha sonra js tarafında oluşturulan bu elemanın html tarafında da gözükmesi için appendChild metodu ile html gönderiliyor
         categoryList.appendChild(categoryDiv);
       })
     )
@@ -117,7 +117,7 @@ function addToBasket(product) {
   //console.log(product);
 
   //eğer benım sepetimde
-  //dışardan gelen product ile ayı id numrasına sahip elemean varsa
+  //dışardan gelen product ile aynı id numarasına sahip eleman varsa
   //o elemanın amount bilgisini arttır
 
   const idsiaynieleman = basket.find(
@@ -134,7 +134,7 @@ function addToBasket(product) {
   // console.log(basket);
 }
 
-//Sepet açıldığında seppetteki ürünleri listeleme fonksiyonu
+//Sepet açıldığında sepetteki ürünleri listeleme fonksiyonu
 function showBasketItems() {
   // console.log('sepeti listeleme')
   //tüm sepet dizimi dön 
@@ -160,7 +160,7 @@ alt=""
 <button class="delete-button"  onclick='deleteItem({id:${id},price:${price},amount:${amount}})' >Sil</button>
 `;
 
-//oluştraln divi html tarafına gönderme
+//oluşturulan divi html tarafına gönderme
     modalList.appendChild(listItem);
 
     // console.log(listItem);
@@ -170,16 +170,16 @@ alt=""
 }
 
 //Sepet Açma Kapama İşlemleri
-//sepet butonuna ıklandığı anın olayını dinliyoruz
+//sepet butonuna tıklandığı anın olayını dinliyoruz
 openButton.addEventListener("click", () => {
   //console.log('sepet butonuna tıklandı')
   showBasketItems();
-  //html de oluştrduğumuz modala active classını eklıyoruz
+  //html de oluşturduğumuz modala active classını eklıyoruz
   modal.classList.add("active");
   totalPrice.innerText = total;
 });
 
-//çarpı resmine tıklanma anını yaklalıyoruz
+//çarpı resmine tıklanma anını yakalıyoruz
 closeButton.addEventListener("click", () => {
   //modal dan active clasını kaldırıyoruz
   modal.classList.remove("active");
@@ -207,7 +207,7 @@ function deleteItem(willDeleteItem) {
   //console.log(willDeleteItem);
   console.log('silmeden önce',basket)
   /**filter metodu tüm diziyi gezer ve bize her dizi elemanını geri verir.
-   * daha sonra bizim yapacağımız kıyasa göre o elemn olmadan bir dizi döner
+   * daha sonra bizim yapacağımız kıyasa göre o eleman olmadan bir dizi döner
    * 
    * 
    */
