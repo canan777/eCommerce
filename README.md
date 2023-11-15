@@ -4,7 +4,7 @@ This project is an e-commerce site project. In the project, information was pull
 
 
 <h1>used technologies</h1>
-HTML, CSS,JavaScript
+HTML, CSS, JavaScript
 
 
 
