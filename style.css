@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-color: purple;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+header input {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+header div {
+  display: flex;
+  gap: 15px;
+}
+
+header div button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: black;
+}
+
+header div button:nth-child(1) {
+  background-color: pink;
+}
+
+header div button:nth-child(2) {
+  background-color: pink;
+}
+
+header div button:nth-child(3) {
+  background-color: pink;
+}
+
+.category-wrapper {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.categories{
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.category {
+  max-width: 150px;
+  min-width: 100px;
+  height: 150px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit:cover ;
+}
+
+.category span {
+  position: absolute;
+  bottom: 10px;
+  background-color: pink;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+
+/*Ürünler Alanı*/
+
+.product-wrapper{
+    padding: 50px;
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.product{
+    width: 250px;
+    box-shadow: 1px 12px 19px 7px purple;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.product img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.product-action{
+    display: flex;
+    background-color: purple;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.product-action button{
+    background-color: pink;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/*Modal Sepet açılınca gösterilecek yapı*/
+
+.modal-wrapper{
+  position: fixed;
+  background-color: rgba(128, 128, 128, 0.378);
+  z-index: 1000;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: none;
+  place-items: center;
+}
+
+
+.modal{
+  background-color: white;
+  width: 80%;
+  height: 60%;
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal img{
+  width: 40px;
+  cursor: pointer;
+}
+
+.modal-list{
+display: flex;
+flex-direction: column;
+gap: 20px;
+overflow-y: auto;
+margin: 5px 10px;
+padding: 5px 10px;
+}
+.total{
+  text-align: center;
+}
+
+.active{
+display: grid;
+}
+
+.list-item{
+  display: flex;
+align-items: center;
+justify-content: space-between;
+border:3px solid gray;
+width: 100%;
+gap: 15px;
+border-radius: 10px;
+padding: 10px;
+box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.56);
+}
+
+.list-item img{
+  width: 50px;
+  height: 50px;
+}
+
+.list-item .price{
+  color: red;
+}
+.list-item h4{
+  font-size: 15px;
+}
+
+.list-item p{
+  font-weight: 800;
+  font-size: 10px;
+}
+
+.delete-button{
+  background-color: orangered;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+#total-price{
+  color: green;
+  font-weight: 700;
+}
